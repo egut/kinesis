@@ -30,7 +30,8 @@ function KinesisStream(options) {
   this.paused = true
   this.fetching = false
   this.shards = []
-  this.logger = options.logger || nullLogger
+  options.logger = options.logger || nullLogger
+  this.logger = options.logger
 }
 util.inherits(KinesisStream, stream.Duplex)
 
